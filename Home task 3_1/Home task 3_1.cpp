@@ -4,27 +4,27 @@
 class Calculator {
 
 public:
-    double add(double num1, double num2) {
+    double add() {
         std::cout << "num1 + num2 = " << num1 + num2 << std::endl;
         return (num1 + num2);
     }
-    double multiply(double num1, double num2) {
+    double multiply() {
         std::cout << "num1 * num2 = " << num1 * num2 << std::endl;
         return (num1 * num2);
     }
-    double subtract_1_2(double num1, double num2) {
+    double subtract_1_2() {
         std::cout << "num1 - num2 = " << num1 - num2 << std::endl;
         return (num1 - num2);
     }
-    double subtract_2_1(double num1, double num2) {
+    double subtract_2_1() {
             std::cout << "num2 - num1 = " << num2 - num1 << std::endl;
             return (num2 - num1);
     }
-    double divide_1_2(double num1, double num2) {
+    double divide_1_2() {
         std::cout << "num1 / num2 = " << num1 / num2 << std::endl;
         return (num1 / num2);
     }
-    double divide_2_1(double num1, double num2) {
+    double divide_2_1() {
         std::cout << "num2 / num1 = " << num2 / num1 << std::endl;
         return (num2 / num1);
     }
@@ -57,30 +57,30 @@ int main(int argc, char** argv)
     do {
         std::cout << "Введите num1: ";
         std::cin >> num1;
+        while (calculator.set_num1(num1) == false) {
+           std::cout << "Неверный ввод!" << std::endl;
+           std::cout << "Введите num1: ";
+           std::cin >> num1;
+        }
+
         std::cout << "Введите num2: ";
         std::cin >> num2;
-
-        while (calculator.set_num1(num1) == false || calculator.set_num2(num2) == false) {
-            std::cout << "Неверный ввод!" << std::endl;
-            if (calculator.set_num1(num1) == false) {
-                std::cout << "Введите num1: ";
-                std::cin >> num1;
-            }
-            if (calculator.set_num2(num2) == false) {
-                std::cout << "Введите num2: ";
-                std::cin >> num2;
-            }
+        while (calculator.set_num2(num2) == false) {
+           std::cout << "Неверный ввод!" << std::endl;
+           std::cout << "Введите num2: ";
+           std::cin >> num2;
         }
-            std::cout << std::endl; 
 
-            calculator.add(num1, num2);
-            calculator.multiply(num1, num2);
-            calculator.subtract_1_2(num1, num2);
-            calculator.subtract_2_1(num1, num2);
-            calculator.divide_1_2(num1, num2);
-            calculator.divide_2_1(num1, num2);
+        std::cout << std::endl; 
 
-            std::cout << std::endl;
+        calculator.add();
+        calculator.multiply();
+        calculator.subtract_1_2();
+        calculator.subtract_2_1();
+        calculator.divide_1_2();
+        calculator.divide_2_1();
+
+        std::cout << std::endl;
 
     } while (true);
 
