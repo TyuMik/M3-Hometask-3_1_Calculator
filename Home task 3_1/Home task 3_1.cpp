@@ -5,27 +5,21 @@ class Calculator {
 
 public:
     double add() {
-        std::cout << "num1 + num2 = " << num1 + num2 << std::endl;
         return (num1 + num2);
     }
     double multiply() {
-        std::cout << "num1 * num2 = " << num1 * num2 << std::endl;
         return (num1 * num2);
     }
     double subtract_1_2() {
-        std::cout << "num1 - num2 = " << num1 - num2 << std::endl;
         return (num1 - num2);
     }
     double subtract_2_1() {
-            std::cout << "num2 - num1 = " << num2 - num1 << std::endl;
             return (num2 - num1);
     }
     double divide_1_2() {
-        std::cout << "num1 / num2 = " << num1 / num2 << std::endl;
         return (num1 / num2);
     }
     double divide_2_1() {
-        std::cout << "num2 / num1 = " << num2 / num1 << std::endl;
         return (num2 / num1);
     }
     bool set_num1(double num1) {
@@ -51,7 +45,7 @@ private:
 int main(int argc, char** argv)
 {
     setlocale(LC_ALL, "Russian");
-    Calculator calculator{};
+    Calculator calculator{ };
     double num1, num2;
 
     do {
@@ -73,12 +67,12 @@ int main(int argc, char** argv)
 
         std::cout << std::endl; 
 
-        calculator.add();
-        calculator.multiply();
-        calculator.subtract_1_2();
-        calculator.subtract_2_1();
-        calculator.divide_1_2();
-        calculator.divide_2_1();
+        std::cout << "num1 + num2 = " << calculator.add() << std::endl;
+        std::cout << "num1 * num2 = " << calculator.multiply() << std::endl;
+        std::cout << "num1 - num2 = " << calculator.subtract_1_2() << std::endl;
+        std::cout << "num2 - num1 = " << calculator.subtract_2_1() << std::endl;
+        std::cout << "num1 / num2 = " << calculator.divide_1_2() << std::endl;
+        std::cout << "num2 / num1 = " << calculator.divide_2_1() << std::endl;
 
         std::cout << std::endl;
 
